@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #iframe {
+      width: 100%;
+      height: 95%;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <select name="" id="choosesite" oninput="selectSite()">
+    </select>
+    <a id="link"></a>
+  </div>
+  <iframe id="iframe">
+
+  </iframe>
+  <script>
+    var sites = [
+      'https://github.com/MuseumofModernArt',
+      'https://github.com/scimusmn',
+      'https://metmuseum.github.io/',
+      'https://analytics.google.com/',
+      'https://sites.google.com/new',
+      'https://muse608.wordpress.com/',
+      'https://manage.wix.com/account/sites',
+      'https://player.vimeo.com/video/516839558',
+      'https://momentous.nma.gov.au/',
+      'https://analytics.google.com/',
+      'http://alumni.media.mit.edu/~persones/'
+    ]
+
+    for (s of sites) {
+      let option = document.createElement('option');
+      option.setAttribute('value', s);
+      option.innerHTML = s;
+      choosesite.appendChild(option);
+    }
+
+    function selectSite() {
+        iframe.src = choosesite.value;
+        link.innerHTML = choosesite.value;
+        link.href = choosesite.value;
+    }
+
+
+
+  </script>
+  </body> 
+  </html>

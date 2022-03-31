@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="themes/prism.css" rel="stylesheet" />    
+    <link href="themes/cheatsheet.css" rel="stylesheet" />    
+  </head>
+  <body>
+    <h1>MUSE 608 HTML/CSS cheatsheet</h1>
+    <h2>Link to element</h2>
+    <div class="example cf">
+      <div class="cf-dst"></div>
+      <div class="cf-src">
+<h3 id="link-dest">Header</h3>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing 
+  elit, sed do eiusmod tempor incididunt ut labore et 
+  dolore magna aliqua. Ut enim ad minim veniam, quis 
+  nostrud exercitation ullamco laboris nisi ut aliquip 
+  ex ea commodo consequat. Duis aute irure dolor in 
+  reprehenderit in voluptate velit esse cillum dolore 
+  eu fugiat nulla pariatur. Excepteur sint occaecat 
+  cupidatat non proident, sunt in culpa qui officia 
+  deserunt mollit anim id est laborum.
+</p>  
+<a href="#link-dest">click to go to the header</a>
+      </div>
+    </div>
+
+    <h2>Floating elements</h2>
+    <div class="example cf">
+      <div class="cf-dst"></div>
+      <div class="cf-src">
+<img class="floating-img" src="images/head.jpg">
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing 
+  elit, sed do eiusmod tempor incididunt ut labore et 
+  dolore magna aliqua. Ut enim ad minim veniam, quis 
+  nostrud exercitation ullamco laboris nisi ut aliquip 
+  ex ea commodo consequat. Duis aute irure dolor in 
+  reprehenderit in voluptate velit esse cillum dolore 
+  eu fugiat nulla pariatur. Excepteur sint occaecat 
+  cupidatat non proident, sunt in culpa qui officia 
+  deserunt mollit anim id est laborum.
+</p>
+
+<style>
+  p {
+    text-align: justify;
+  }
+  
+  .floating-img {
+    float: right;
+    width: 100px;
+    margin: 20px
+  }
+</style>
+      </div>
+    </div>
+
+    <h2>Side by side elements</h2>
+    <div class="example cf">
+      <div class="cf-dst"></div>
+      <div class="cf-src">
+<div class="side-by-side-container">
+  <div class="side-by-side-textbox">
+    <p>text of box 1</p>
+  </div>
+  <div class="side-by-side-textbox">
+    <p>text of box 2</p>
+  </div>
+</div>
+
+<style>
+  .side-by-side-container {
+    display: flex;
+    flex-direction: row;
+    background-color: lightblue; 
+    padding: 10px;
+    justify-content: space-evenly;
+    width: 400px;
+  }
+  
+  .side-by-side-textbox {
+    background-color: lightcoral;
+    padding: 10px;
+    border: 1px solid black;
+  }
+</style>
+      </div>
+    </div>
+    <script src="formater.js"></script>
+    <script src="themes/prism.js"></script>
+  </body>
+</html>
+
