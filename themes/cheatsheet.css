@@ -1,0 +1,16 @@
+.example {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.example > * {
+  width : 100px;
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+h1, h2 {
+  text-align: center;
+}

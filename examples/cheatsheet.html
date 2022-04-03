@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="themes/prism.css" rel="stylesheet" />    
-    <link href="themes/cheatsheet.css" rel="stylesheet" />    
+    <link href="../themes/prism.css" rel="stylesheet" />    
+    <link href="../themes/cheatsheet.css" rel="stylesheet" />    
   </head>
   <body>
     <h1>MUSE 608 HTML/CSS cheatsheet</h1>
@@ -88,8 +88,71 @@
 </style>
       </div>
     </div>
-    <script src="formater.js"></script>
-    <script src="themes/prism.js"></script>
+    
+    
+    <h2>Hovering</h2>
+    <div class="example cf">
+      <div class="cf-dst"></div>
+      <div class="cf-src">
+<div class="hover-container">
+  <div class="hover-area">hover me!</div>
+  <div class="hover-target">Text to show when hovered</div>
+</div>
+<style>
+  .hover-container {
+    position: relative;
+  }
+
+  .hover-area {
+    border: 1px solid black;
+  }
+  .hover-target {
+    display: none;
+    border: 1px solid black;
+    background-color: aqua;
+    
+  }
+  .hover-container:hover .hover-target {
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 50px;
+  }
+</style>
+<h3>How does this work?</h3>
+<p>Notice this line:</p>
+<code>.hover-container:hover .hover-target {</code>
+<p>This is a complicated CSS selector. <code>:hover</code> is a 
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">pseudo-class</a>, which is,
+  in short, a class that is automtically assigned by the browser. In this case, it is when an
+  element is <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover" target="_blank">hovered.</a>.
+</p>
+<p>When two CSS selectros are written on after the other, without space between them, the rule applies to 
+  all elements that qualify to <em>both</em> selectors. So <code>.hover-container:hover</code>
+  means "all elements that are of the class <code>.hover-container</code> <em>and</em> are currently hovered". 
+</p>
+<p>When two CSS selectros are written on after the other <em>with</em> a space between them,
+ that is called a "<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator" target="_blank">descendant combinator</a>", which means that 
+the rule applies to elements that qualify to the second selector <em>if</em>
+they are within an element that qualify to the first selector. Example:</p>
+<code>.parent-class p {</code> 
+<p>will apply to <code>p</code> elements that are with in an element of ths class <code>parent-class</code>
+<p>So this line:</p>
+<code>.hover-container:hover .hover-target {</code>
+<p>means: "all elements of the class <code>.hover-target</code> that are
+within an element of the class <code>.hover-container</code> which is currently hovered</p>
+<p>If we now look at the rest of the CSS code, we see that the <code>.hover-target</code> class
+has a <code>display: none</code> property, but if the <code>.hover-container</code>, which contains is,
+is hovered, then the display becomes <code>block</code>, and the element appears. It has a 
+<code>position: absolute</code>property, so it shows exactly where we tell it
+to, without interfering with the rest of the page. Notice that 
+you have to give the contianer, in this case <code>.hover-container</code>,
+a <code>position: relative</code> propery.</p>
+
+      </div>
+    </div>
+    <script src="../scripts/formater.js"></script>
+    <script src="../scripts/prism.js"></script>
   </body>
 </html>
 
