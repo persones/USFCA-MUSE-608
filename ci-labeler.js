@@ -8,8 +8,19 @@ document.addEventListener('readystatechange', async (event) => {
       = data.properties.hasName.value_text;
     } catch (err) {}
     try {
-      item.querySelector('.ci-label').innerHTML 
-      = data.properties.hasLabels.value[0].hasLabel.value_text;
+      let labelElement = item.querySelector('.ci-label');
+      if (labelElement) {
+        let labelsResponse = data.properties.hasLabels;
+        let labelText;
+        if (labelsResponse) {
+          if (labelsResponse instanceof Array) {
+            labelText = labelsResponse.value[0].hasLabel.value_text;
+          } else {
+            labelText = labelsResponse.value.hasLabel.value_text;
+          }
+          labelElement.innerHTML = labelText;
+        }
+      }
     } catch (err) {}
     try {
       item.querySelector('.ci-description').innerHTML
